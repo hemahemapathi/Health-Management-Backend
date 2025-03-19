@@ -8,6 +8,8 @@ import patientRoutes from './routes/patientRoutes.js';
 import prescriptionRoutes from './routes/prescriptionRoutes.js';
 import doctorRoutes from './routes/doctorRoutes.js';
 import appointmentRoutes from './routes/appointmentRoutes.js';
+import path from "path";
+import { fileURLToPath } from 'url';
 
 dotenv.config();
 const app = express();
