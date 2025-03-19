@@ -8,13 +8,11 @@ import patientRoutes from './routes/patientRoutes.js';
 import prescriptionRoutes from './routes/prescriptionRoutes.js';
 import doctorRoutes from './routes/doctorRoutes.js';
 import appointmentRoutes from './routes/appointmentRoutes.js';
-import path from "path";
-import { fileURLToPath } from 'url';
+
 
 dotenv.config();
 const app = express();
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+
 
 app.use(cors({
     origin: 'http://localhost:5173', // or whatever port your React app is running on
