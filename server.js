@@ -11,6 +11,8 @@ import appointmentRoutes from './routes/appointmentRoutes.js';
 
 dotenv.config();
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 app.use(cors({
     origin: 'http://localhost:5173', // or whatever port your React app is running on
@@ -27,6 +29,19 @@ app.use('/api/patients', patientRoutes);
 app.use('/api/prescriptions', prescriptionRoutes);
 app.use('/api/doctors', doctorRoutes);
 app.use('/api/appointments', appointmentRoutes);
+
+
+app.get("/", (req, res) => {
+  res.send("Hello From Serverside!!");
+});
+
+app.get("/test", (req, res) => {
+  res.status(200).send('OK')
+});
+
+app.get("/health", (req, res) => {
+  res.send("Hello From Serverside!!");
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
